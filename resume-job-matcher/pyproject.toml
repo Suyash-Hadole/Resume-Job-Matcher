@@ -1,0 +1,4 @@
+[tool.vercel]
+# Vercel must use the lightweight proxy, not app.py (which imports the full NLP
+# stack and caused the 5.9 GB Lambda bundle).
+entrypoint = "vercel_proxy:app"

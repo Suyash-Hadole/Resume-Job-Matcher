@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume–Job Matcher · Intelligent Matching Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true">RJ</span>
+        <div>
+          <h1>Resume–Job Matcher</h1>
+          <p>NER · sentence embeddings · semantic ranking · skill-gap analysis</p>
+        </div>
+      </div>
+      <div class="status" id="status" role="status" aria-live="polite">
+        <span class="status__dot" id="statusDot"></span>
+        <span id="statusText">Checking backend…</span>
+      </div>
+    </div>
+    <div class="model-strip" id="modelStrip" role="group" aria-label="Model status">
+      <span class="model-chip" id="chipSpaCy"><span class="model-chip__dot"></span>spaCy: checking…</span>
+      <span class="model-chip" id="chipEmbeddings"><span class="model-chip__dot"></span>Embeddings: checking…</span>
+      <span class="model-chip" id="chipGemini"><span class="model-chip__dot"></span>Gemini: checking…</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="workspace" aria-labelledby="workspaceHeading">
+      <div class="section-head">
+        <div>
+          <h2 id="workspaceHeading">Intelligent Resume–Job Matching</h2>
+          <p class="hint">One workspace: describe the role, add resumes, then inspect a transparent matching report.</p>
+        </div>
+        <span class="badge badge--local">Local NLP · Gemini optional</span>
+      </div>
+
+      <div class="grid grid--two">
+        <article class="card" aria-labelledby="roleHeading">
+          <h3 id="roleHeading"><span class="step">1</span> Role details</h3>
+
+          <label for="jobTitle">Job title <span class="hint">(any profession, not only samples)</span></label>
+          <input type="text" id="jobTitle" class="text-input" placeholder="e.g. AI Engineer, Python Developer, Data Scientist" autocomplete="off">
+
+          <label for="jobSelect">Or start from a sample role</label>
+          <select id="jobSelect">
+            <option value="">Loading sample roles…</option>
+          </select>
+
+          <label for="jobText">Job description <span class="hint">(edit freely or paste your own)</span></label>
+          <textarea id="jobText" rows="8" placeholder="Paste a job description with at least 10 words…"></textarea>
+          <div class="counter" id="jobCounter">0 words</div>
+
+          <label for="jobLocation">Preferred job location</label>
+          <input type="text" id="jobLocation" class="text-input" value="Pune" placeholder="Pune, Mumbai, Bengaluru, Remote or any city" autocomplete="off">
+          <div class="chips location-chips" aria-label="Quick location choices">
+            <button class="chip sample-btn" type="button" data-location="Pune">Pune</button>
+            <button class="chip sample-btn" type="button" data-location="Mumbai">Mumbai</button>
+            <button class="chip sample-btn" type="button" data-location="Bengaluru">Bengaluru</button>
+            <button class="chip sample-btn" type="button" data-location="Remote">Remote</button>
+            <button class="chip sample-btn" type="button" data-location="India">Across India</button>
+          </div>
+        </article>
+
+        <article class="card" aria-labelledby="resumeHeading">
+          <h3 id="resumeHeading"><span class="step">2</span> Candidate resumes</h3>
+          <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose resume files">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+            <p><strong>Drop resumes here</strong> or click to browse</p>
+            <p class="hint">PDF, DOCX or TXT · up to {{ max_resumes }} files · {{ max_mb }} MB each</p>
+            <input type="file" id="fileInput" accept=".pdf,.docx,.txt" multiple hidden>
+          </div>
+          <ul class="filelist" id="fileList"></ul>
+          <div class="row-between">
+            <button class="btn btn--ghost btn--small" id="matchingSampleBtn" type="button">Load sample resume</button>
+            <span class="hint">Adds a real TXT resume you can rank immediately.</span>
+          </div>
+          <div class="actions">
+            <button class="btn btn--primary" id="analyzeBtn" type="button">Analyze &amp; rank</button>
+            <button class="btn btn--ghost" id="clearBtn" type="button">Clear</button>
+          </div>
+          <div class="alert alert--error" id="errorBox" role="alert" hidden></div>
+        </article>
+      </div>
+
+      <div class="empty-state" id="resultsEmpty">
+        <strong>No matching report yet</strong>
+        <span>Enter a job title and description, choose a location, add one or more resumes and click <b>Analyze &amp; rank</b>. The ranking, NER profile, skill gap, TF-IDF/semantic scores and job-search links will appear here.</span>
+      </div>
+
+      <section class="results" id="results" hidden aria-live="polite">
+        <div class="results__head">
+          <div>
+            <h2 id="resultsTitle">Matching report</h2>
+            <p class="hint" id="resultsMeta"></p>
+          </div>
+          <span class="badge badge--local">Computed locally</span>
+        </div>
+        <div class="alert alert--warn" id="warnBox" hidden></div>
+
+        <div class="grid grid--two">
+          <article class="card">
+            <h3>Candidate ranking</h3>
+            <div id="ranking" class="ranking"></div>
+          </article>
+          <article class="card">
+            <h3>Job requirements <span class="hint" id="jobSkillCount"></span></h3>
+            <div id="jobSkills" class="chips"></div>
+            <h4 class="mt">Score weights</h4>
+            <div id="weights" class="weights"></div>
+            <p class="hint">Semantic similarity uses MiniLM embeddings; the TF-IDF baseline is shown separately. Sentiment and Gemini never affect these scores.</p>
+          </article>
+        </div>
+
+        <div id="candidates" class="candidates"></div>
+
+        <article class="card" id="jobLinksCard" hidden>
+          <div class="ai-result-head">
+            <div>
+              <h3>Explore Job Opportunities</h3>
+              <p class="hint" id="jobLinksMeta">External searches for your role and location.</p>
+            </div>
+            <span class="badge badge--cloud">External job search</span>
+          </div>
+          <p class="disclaimer" id="jobLinksDisclaimer"></p>
+          <div class="job-links" id="jobLinks"></div>
+        </article>
+
+        <article class="card" id="aiCard">
+          <div class="ai-result-head">
+            <div>
+              <h3>Gemini AI Career Assistant <span class="hint">(optional)</span></h3>
+              <div id="aiStatus" class="status-card">Checking Gemini configuration…</div>
+            </div>
+            <button class="btn btn--ghost btn--small" id="aiTestBtn" type="button">Test connection</button>
+          </div>
+          <div class="alert alert--warn privacy-note">
+            <strong>Privacy and consent.</strong> Local matching is complete before any AI request. The resume excerpt and job title/description are redacted (emails, phones, URLs and names), untrusted text is neutralised, and context is length-limited. Nothing is sent unless you tick consent and choose a task.
+          </div>
+          <div class="grid grid--two ai-context">
+            <div>
+              <label for="aiResumeSelect">Resume for this analysis</label>
+              <select id="aiResumeSelect"><option value="">— Top-ranked candidate —</option></select>
+              <p class="hint">Job context is taken from the role details above.</p>
+            </div>
+            <label class="consent">
+              <input type="checkbox" id="aiConsent">
+              <span>I consent to sending a redacted excerpt of this resume and the job description to Google Gemini for this analysis.</span>
+            </label>
+          </div>
+          <div class="task-grid" id="aiTaskButtons">
+            {% for task in tasks %}
+            <article class="task-card">
+              <span class="badge badge--cloud">Gemini</span>
+              <h4>{{ task_labels[task] }}</h4>
+              <button class="btn btn--primary ai-run" type="button" data-task="{{ task }}">Generate</button>
+            </article>
+            {% endfor %}
+          </div>
+          <div class="alert alert--error" id="aiError" role="alert" hidden></div>
+          <div class="empty-state" id="aiEmpty">
+            <strong>No AI response yet</strong>
+            <span>Tick the consent checkbox and choose a task above. The generated response and redaction summary appear here.</span>
+          </div>
+          <div id="aiResults" class="stack" aria-live="polite"></div>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><span class="badge badge--local">Local NLP</span> NER, embeddings, TF-IDF, cosine similarity, skill gap and ranking run on this machine.</p>
+    <p><span class="badge badge--cloud">External</span> Job-search links open third-party sites; Gemini runs only after explicit consent and never changes local scores.</p>
+  </footer>
+
+  <div class="loading" id="loading" hidden>
+    <div class="spinner" aria-hidden="true"></div>
+    <p id="loadingText">Analyzing resumes…</p>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

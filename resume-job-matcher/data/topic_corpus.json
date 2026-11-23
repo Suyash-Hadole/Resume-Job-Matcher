@@ -1,0 +1,95 @@
+{
+  "description": "Anonymised technology resumes, job descriptions and project briefs used as a sample corpus for topic modelling. All names and employers are fictional.",
+  "documents": [
+    {
+      "id": "doc-01",
+      "title": "Resume - Data Scientist (Priya S.)",
+      "category": "resume",
+      "text": "Data scientist with five years of experience in predictive modelling and statistical analysis. Built classification and regression models with Python, pandas, NumPy, scikit-learn and XGBoost. Designed A/B tests, performed feature engineering and evaluated models with cross-validation. Created dashboards in Tableau and Power BI and wrote complex SQL queries against a cloud data warehouse. Experience with Apache Spark, Jupyter notebooks and time series forecasting. Strong statistics background and experience explaining model results to business stakeholders."
+    },
+    {
+      "id": "doc-02",
+      "title": "Resume - Machine Learning Engineer (Arjun M.)",
+      "category": "resume",
+      "text": "Machine learning engineer focused on production model deployment and scalable training pipelines. Trained deep learning models with PyTorch and TensorFlow, served models behind FastAPI microservices and containerised workloads with Docker and Kubernetes. Automated retraining and experiment tracking with MLflow, Airflow and CI/CD. Monitored model drift and latency in production. Strong Python, SQL, pandas and NumPy skills, with experience on AWS and GCP. Built feature stores and real-time inference services for recommendation models."
+    },
+    {
+      "id": "doc-03",
+      "title": "Resume - NLP Engineer (Meera I.)",
+      "category": "resume",
+      "text": "NLP engineer building language understanding systems. Developed named entity recognition, text classification and sentiment analysis pipelines with spaCy, NLTK and Hugging Face transformers. Fine-tuned BERT models, created sentence embeddings and implemented semantic search with vector databases. Built retrieval augmented generation applications with LangChain and large language models. Evaluated model quality with precision, recall and human review. Deployed NLP services with FastAPI and Docker. Experience with topic modelling, tokenisation, lemmatisation and multilingual text processing."
+    },
+    {
+      "id": "doc-04",
+      "title": "Resume - Python Backend Developer (Rahul V.)",
+      "category": "resume",
+      "text": "Backend developer specialising in Python web services and relational databases. Built REST APIs with Flask and Django, designed PostgreSQL schemas and optimised SQL queries. Wrote unit tests with pytest, automated deployments with GitHub Actions and Docker, and maintained services on Linux. Implemented JWT authentication and OAuth integrations. Collaborated with frontend engineers using Git and participated in code reviews. Experience with Redis caching, API design and object oriented programming."
+    },
+    {
+      "id": "doc-05",
+      "title": "Resume - Full-Stack Developer (Sneha K.)",
+      "category": "resume",
+      "text": "Full-stack web developer building responsive applications with JavaScript, TypeScript, React, Next.js, HTML and CSS. Created reusable components with Tailwind CSS and managed application state. Developed REST and GraphQL APIs with Node.js and Express, connected to MongoDB and PostgreSQL. Implemented JWT authentication, wrote unit tests and deployed applications with Docker on AWS. Worked in agile teams using Git, GitHub and CI/CD. Focused on accessibility, performance and clean user interfaces."
+    },
+    {
+      "id": "doc-06",
+      "title": "Resume - DevOps Engineer (Vikram R.)",
+      "category": "resume",
+      "text": "DevOps engineer automating cloud infrastructure and continuous delivery. Provisioned AWS resources with Terraform, managed Kubernetes clusters and containerised services with Docker. Built CI/CD pipelines with Jenkins and GitHub Actions, configured Linux servers and Nginx reverse proxies. Implemented monitoring, logging and alerting for production systems. Automated configuration management and secrets rotation. Strong background in networking, shell scripting, Python automation and site reliability practices."
+    },
+    {
+      "id": "doc-07",
+      "title": "Resume - Data Analyst (Ananya P.)",
+      "category": "resume",
+      "text": "Data analyst turning operational data into business reports and dashboards. Used SQL, Excel, Tableau and Power BI to analyse sales, marketing and customer data. Cleaned datasets with pandas, wrote statistical summaries and visualised trends with matplotlib and seaborn. Ran A/B testing analysis and built KPI reports for product teams. Experience with data quality checks, ETL pipelines and stakeholder communication. Strong attention to detail and clear written reporting."
+    },
+    {
+      "id": "doc-08",
+      "title": "Job - Data Scientist",
+      "category": "job_description",
+      "text": "We are hiring a data scientist to turn complex datasets into actionable insights. You will perform statistical analysis and predictive modelling with Python, pandas, scikit-learn and SQL, design A/B tests and communicate findings with Tableau or Power BI. Experience with feature engineering, time series forecasting, Apache Spark and cloud data platforms is desirable. The role requires strong statistics fundamentals and the ability to explain machine learning results to non-technical stakeholders."
+    },
+    {
+      "id": "doc-09",
+      "title": "Job - NLP Engineer",
+      "category": "job_description",
+      "text": "We are looking for an NLP engineer to build language understanding and text analytics systems. You will develop named entity recognition, text classification, sentiment analysis and semantic search using spaCy, transformers and sentence embeddings. Experience fine-tuning BERT, building retrieval augmented generation pipelines with large language models and evaluating models with rigorous metrics is required. Familiarity with Python, PyTorch, FastAPI, Docker and topic modelling is valued."
+    },
+    {
+      "id": "doc-10",
+      "title": "Job - Python Backend Engineer",
+      "category": "job_description",
+      "text": "Seeking a Python backend engineer to design and maintain REST APIs and database services. You will write clean Python with Flask or Django, model relational data in PostgreSQL or MySQL, write SQL queries and unit tests with pytest, and deploy applications with Docker and CI/CD. Experience with Linux, Redis, JWT authentication, API design and cloud platforms such as AWS is a plus. Strong understanding of data structures, algorithms and object oriented programming is required."
+    },
+    {
+      "id": "doc-11",
+      "title": "Job - Full-Stack Developer",
+      "category": "job_description",
+      "text": "Hiring a full-stack developer to build modern web applications end to end. You will use JavaScript, TypeScript, React and Tailwind CSS on the frontend, and Node.js, Express and GraphQL on the backend, backed by MongoDB or PostgreSQL. Experience with JWT authentication, responsive design, unit testing, Git, Docker and CI/CD is required. Familiarity with AWS deployment, accessibility and agile product development is a plus."
+    },
+    {
+      "id": "doc-12",
+      "title": "Job - DevOps / Cloud Engineer",
+      "category": "job_description",
+      "text": "We need a DevOps engineer to operate reliable cloud infrastructure. You will manage AWS environments with Terraform, run Kubernetes and Docker workloads, and build CI/CD pipelines with Jenkins or GitHub Actions. Responsibilities include Linux administration, Nginx configuration, monitoring, logging, incident response and automation with Python or shell scripting. Experience with site reliability engineering, networking and secure secret management is required."
+    },
+    {
+      "id": "doc-13",
+      "title": "Project brief - Customer churn prediction",
+      "category": "project_brief",
+      "text": "Build a machine learning pipeline that predicts customer churn from historical subscription data. The team will clean data with pandas, engineer behavioural features, train classification models with scikit-learn and XGBoost, and evaluate precision, recall and ROC AUC. Deliverables include an explainable model report, a Tableau dashboard for business users and a batch scoring job running on Apache Spark. SQL access to the data warehouse is provided."
+    },
+    {
+      "id": "doc-14",
+      "title": "Project brief - Support ticket triage",
+      "category": "project_brief",
+      "text": "Create an NLP system that classifies incoming support tickets by topic and urgency. The solution should use text preprocessing, sentence embeddings and a transformer classifier, with named entity recognition for product names and dates. Build a FastAPI service, containerise it with Docker and deploy it to Kubernetes. Add a retrieval augmented generation assistant that answers common questions from the documentation, with evaluation of answer relevance and latency."
+    },
+    {
+      "id": "doc-15",
+      "title": "Project brief - Analytics dashboard platform",
+      "category": "project_brief",
+      "text": "Develop a web analytics dashboard for product and marketing teams. The frontend uses React, TypeScript and Tailwind CSS, while the backend exposes REST APIs built with Node.js and Express over PostgreSQL. Include authentication with JWT, role based access control, responsive charts and exportable reports. Write unit tests, configure CI/CD with GitHub Actions, deploy with Docker on AWS and monitor application performance."
+    }
+  ]
+}

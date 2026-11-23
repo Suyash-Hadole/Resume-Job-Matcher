@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "pip install -r requirements.txt",
+  "buildCommand": "python scripts/prepare_vercel_public.py",
+  "functions": {
+    "vercel_proxy.py": {
+      "maxDuration": "max",
+      "excludeFiles": "{.venv/**,venv/**,env/**,.pytest_cache/**,__pycache__/**,**/__pycache__/**,.env,.env.*,tests/**,notebooks/**,scripts/**,data/**,*.ipynb,*.log,*.bin,*.safetensors,*.onnx,*.gguf,.cache/**,models/**,model-cache/**,hf-cache/**,requirements-backend.txt,BUILD_STATUS.md,IMPLEMENTATION_REPORT.md,RUBRIC_COVERAGE.md,RUBRIC_MAPPING.md,DEMO_GUIDE.md}"
+    }
+  }
+}

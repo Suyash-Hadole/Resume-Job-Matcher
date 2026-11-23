@@ -1,0 +1,222 @@
+{
+  "description": "Manually labelled sentiment examples for evaluating VADER. 36 sentences, 12 per class. Labels were assigned by hand before running the analyser. The examples cover job reviews, recruitment feedback, cover-letter text and workplace updates.",
+  "labels": ["negative", "neutral", "positive"],
+  "examples": [
+    {
+      "id": "pos-01",
+      "label": "positive",
+      "category": "job_review",
+      "text": "The onboarding process was smooth, welcoming, and well organised."
+    },
+    {
+      "id": "pos-02",
+      "label": "positive",
+      "category": "job_review",
+      "text": "I really enjoyed working with this team; everyone was supportive and helpful."
+    },
+    {
+      "id": "pos-03",
+      "label": "positive",
+      "category": "recruitment_feedback",
+      "text": "The interviewers were friendly and gave clear, useful feedback."
+    },
+    {
+      "id": "pos-04",
+      "label": "positive",
+      "category": "job_review",
+      "text": "This role offers excellent learning opportunities and a healthy work-life balance."
+    },
+    {
+      "id": "pos-05",
+      "label": "positive",
+      "category": "cover_letter",
+      "text": "I am excited to apply my Python and NLP skills to this position."
+    },
+    {
+      "id": "pos-06",
+      "label": "positive",
+      "category": "recruitment_feedback",
+      "text": "The recruiter communicated promptly and made the entire process pleasant."
+    },
+    {
+      "id": "pos-07",
+      "label": "positive",
+      "category": "job_review",
+      "text": "Management trusted us to make decisions and celebrated our successes."
+    },
+    {
+      "id": "pos-08",
+      "label": "positive",
+      "category": "job_review",
+      "text": "The project was challenging in a rewarding way and I grew a lot."
+    },
+    {
+      "id": "pos-09",
+      "label": "positive",
+      "category": "job_review",
+      "text": "Compensation and benefits exceeded my expectations."
+    },
+    {
+      "id": "pos-10",
+      "label": "positive",
+      "category": "job_review",
+      "text": "The company culture is inclusive, collaborative, and genuinely inspiring."
+    },
+    {
+      "id": "pos-11",
+      "label": "positive",
+      "category": "job_review",
+      "text": "I would gladly recommend this workplace to other engineers."
+    },
+    {
+      "id": "pos-12",
+      "label": "positive",
+      "category": "job_review",
+      "text": "The training program was practical, engaging, and extremely valuable."
+    },
+    {
+      "id": "neg-01",
+      "label": "negative",
+      "category": "recruitment_feedback",
+      "text": "The interview process was disorganised and the recruiter never replied."
+    },
+    {
+      "id": "neg-02",
+      "label": "negative",
+      "category": "job_review",
+      "text": "Management ignored our concerns and the workload was exhausting."
+    },
+    {
+      "id": "neg-03",
+      "label": "negative",
+      "category": "job_review",
+      "text": "I regret accepting this offer; the environment was toxic and stressful."
+    },
+    {
+      "id": "neg-04",
+      "label": "negative",
+      "category": "recruitment_feedback",
+      "text": "The feedback was vague, unhelpful, and frankly discouraging."
+    },
+    {
+      "id": "neg-05",
+      "label": "negative",
+      "category": "job_review",
+      "text": "Promotions were unfair and the salary was far below market rate."
+    },
+    {
+      "id": "neg-06",
+      "label": "negative",
+      "category": "job_review",
+      "text": "The project failed because of poor planning and constant last-minute changes."
+    },
+    {
+      "id": "neg-07",
+      "label": "negative",
+      "category": "job_review",
+      "text": "I was frustrated by the lack of training and the unreliable tools."
+    },
+    {
+      "id": "neg-08",
+      "label": "negative",
+      "category": "job_review",
+      "text": "The team culture was hostile and collaboration was almost impossible."
+    },
+    {
+      "id": "neg-09",
+      "label": "negative",
+      "category": "job_review",
+      "text": "Overtime was expected every week and burnout was common."
+    },
+    {
+      "id": "neg-10",
+      "label": "negative",
+      "category": "recruitment_feedback",
+      "text": "The recruiter was rude and the interview felt like a waste of time."
+    },
+    {
+      "id": "neg-11",
+      "label": "negative",
+      "category": "job_review",
+      "text": "Documentation was terrible and onboarding was confusing and slow."
+    },
+    {
+      "id": "neg-12",
+      "label": "negative",
+      "category": "job_review",
+      "text": "I am disappointed with the leadership and would not work here again."
+    },
+    {
+      "id": "neu-01",
+      "label": "neutral",
+      "category": "recruitment_update",
+      "text": "The interview is scheduled for Tuesday at 10 a.m. in the main office."
+    },
+    {
+      "id": "neu-02",
+      "label": "neutral",
+      "category": "job_description",
+      "text": "The role requires Python, SQL, and three years of experience."
+    },
+    {
+      "id": "neu-03",
+      "label": "neutral",
+      "category": "cover_letter",
+      "text": "I have attached my resume and transcript for your review."
+    },
+    {
+      "id": "neu-04",
+      "label": "neutral",
+      "category": "job_description",
+      "text": "The team consists of eight engineers and two product managers."
+    },
+    {
+      "id": "neu-05",
+      "label": "neutral",
+      "category": "job_description",
+      "text": "The position is based in Bengaluru and reports to the engineering manager."
+    },
+    {
+      "id": "neu-06",
+      "label": "neutral",
+      "category": "recruitment_update",
+      "text": "The application deadline is 30 November and interviews begin in December."
+    },
+    {
+      "id": "neu-07",
+      "label": "neutral",
+      "category": "job_description",
+      "text": "The job description lists Docker, Kubernetes, and AWS as preferred skills."
+    },
+    {
+      "id": "neu-08",
+      "label": "neutral",
+      "category": "company_info",
+      "text": "The company was founded in 2015 and has offices in Pune and Hyderabad."
+    },
+    {
+      "id": "neu-09",
+      "label": "neutral",
+      "category": "recruitment_update",
+      "text": "Please confirm your availability for a technical assessment next week."
+    },
+    {
+      "id": "neu-10",
+      "label": "neutral",
+      "category": "job_description",
+      "text": "The salary range is listed in the job posting."
+    },
+    {
+      "id": "neu-11",
+      "label": "neutral",
+      "category": "recruitment_update",
+      "text": "The candidate submitted the assignment before the stated deadline."
+    },
+    {
+      "id": "neu-12",
+      "label": "neutral",
+      "category": "recruitment_update",
+      "text": "The meeting will cover project status, timelines, and next steps."
+    }
+  ]
+}

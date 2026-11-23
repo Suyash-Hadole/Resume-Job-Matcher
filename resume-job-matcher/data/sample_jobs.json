@@ -1,0 +1,27 @@
+[
+  {
+    "id": "python-developer",
+    "title": "Python Developer",
+    "description": "We are looking for a Python Developer to design, build and maintain backend services and automation tools. You will write clean, testable Python code, build REST APIs using Flask or Django, and work with relational databases such as PostgreSQL and MySQL. Responsibilities include designing database schemas, writing SQL queries, integrating third-party services, and deploying applications with Docker. You will collaborate with the team using Git and GitHub, participate in code reviews, and write unit testing suites with pytest. Experience with Linux, CI/CD pipelines, and cloud platforms such as AWS is a plus. Strong understanding of data structures, algorithms, and object oriented programming is required."
+  },
+  {
+    "id": "data-scientist",
+    "title": "Data Scientist",
+    "description": "We are hiring a Data Scientist to turn complex data into actionable insights. You will perform data analysis and statistical analysis using Python, pandas, numpy and scipy, build predictive models with scikit-learn and xgboost, and communicate findings with data visualization tools such as matplotlib, seaborn, Tableau or Power BI. You will design and evaluate A/B testing experiments, apply feature engineering, time series forecasting and machine learning techniques, and write complex SQL queries against large datasets. Experience with Apache Spark, Jupyter notebooks, and cloud platforms such as AWS or Azure is desirable. Strong statistics fundamentals and the ability to explain results to non-technical stakeholders are essential."
+  },
+  {
+    "id": "ml-engineer",
+    "title": "Machine Learning Engineer",
+    "description": "We are seeking a Machine Learning Engineer to build and deploy production machine learning systems. You will train deep learning models using PyTorch or TensorFlow, build scalable training pipelines, and handle model deployment and model serving behind REST APIs built with FastAPI or Flask. You will containerize services with Docker and Kubernetes, automate workflows with MLOps tooling such as MLflow and Airflow, and use Git and CI/CD for reproducible releases. Strong Python, scikit-learn, pandas, numpy and SQL skills are required, along with experience on AWS or GCP. Knowledge of feature engineering, computer vision, data pipelines and Apache Spark is a plus."
+  },
+  {
+    "id": "nlp-engineer",
+    "title": "NLP Engineer",
+    "description": "We are looking for an NLP Engineer to develop language understanding systems. You will build natural language processing pipelines using spaCy, NLTK and Hugging Face transformers, fine-tune BERT and large language models, and implement named entity recognition, text classification, sentiment analysis and semantic search using sentence transformers and word embeddings. You will build retrieval augmented generation applications with LangChain, write production Python code with PyTorch, deploy models via FastAPI and Docker, and evaluate model quality with rigorous experiments. Experience with Elasticsearch, topic modeling, machine learning, deep learning, Git and cloud platforms such as AWS is valued."
+  },
+  {
+    "id": "full-stack-developer",
+    "title": "Full-Stack Developer",
+    "description": "We are hiring a Full-Stack Developer to build modern web applications end to end. On the front end you will use JavaScript, TypeScript, HTML, CSS and React with responsive design using Bootstrap or Tailwind CSS. On the back end you will build REST APIs with Node.js and Express or Python with Django and Flask, backed by PostgreSQL, MongoDB or MySQL, with JWT authentication. You will use Git and GitHub, Docker, and CI/CD pipelines to ship features, write unit testing coverage, and deploy on AWS or Azure. Familiarity with GraphQL, Redis, microservices and agile practices is a plus."
+  }
+]

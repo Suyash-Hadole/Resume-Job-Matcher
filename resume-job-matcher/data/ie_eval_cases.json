@@ -1,0 +1,114 @@
+{
+  "description": "Small manually annotated extraction benchmark used to report real precision/recall for skill extraction and field accuracy for contact/education/experience extraction.",
+  "cases": [
+    {
+      "id": "ie-01",
+      "text": "Priya Sharma\npriya.sharma@example.com | +91 98765 43210 | github.com/priyasharma\nData Scientist with 5 years of experience.\nSkills: Python, SQL, pandas, NumPy, scikit-learn, Tableau, Apache Spark.\nEducation: B.Tech in Computer Science, Pune University.",
+      "expected": {
+        "name_contains": "Priya Sharma",
+        "emails": ["priya.sharma@example.com"],
+        "phones_contain": ["9876543210"],
+        "links_contain": ["github.com/priyasharma"],
+        "education_contains": ["B.Tech"],
+        "experience_years": 5,
+        "skills": ["python", "sql", "pandas", "numpy", "scikit-learn", "tableau", "apache spark"]
+      }
+    },
+    {
+      "id": "ie-02",
+      "text": "Rahul Verma\nrahul.verma@example.com\nFull-stack developer with 3 years of experience.\nSkills: JavaScript, TypeScript, React, Node.js, Express, MongoDB, HTML, CSS, Docker, Git, REST API.\nEducation: B.Sc. in Computer Science, Delhi University.",
+      "expected": {
+        "name_contains": "Rahul Verma",
+        "emails": ["rahul.verma@example.com"],
+        "education_contains": ["B.Sc"],
+        "experience_years": 3,
+        "skills": ["javascript", "typescript", "react", "node.js", "express", "mongodb", "html", "css", "docker", "git", "rest api"]
+      }
+    },
+    {
+      "id": "ie-03",
+      "text": "Dr. Anita Rao\nanita.rao@lab.org\nMachine Learning Engineer with 7 years of experience.\nSkills: PyTorch, TensorFlow, scikit-learn, pandas, NumPy, SQL, AWS, Docker, Kubernetes.\nEducation: Ph.D. in Computer Science, IIT Bombay.",
+      "expected": {
+        "name_contains": "Anita Rao",
+        "emails": ["anita.rao@lab.org"],
+        "education_contains": ["Ph.D"],
+        "experience_years": 7,
+        "skills": ["machine learning", "pytorch", "tensorflow", "scikit-learn", "pandas", "numpy", "sql", "aws", "docker", "kubernetes"]
+      }
+    },
+    {
+      "id": "ie-04",
+      "text": "Sam Lee\nsam.lee@example.com\nData Analyst with 4 years of experience in SQL, Tableau, Power BI, Excel and Python.\nEducation: B.Sc. in Statistics, University of Delhi (2018 - 2021).",
+      "expected": {
+        "name_contains": "Sam Lee",
+        "emails": ["sam.lee@example.com"],
+        "education_contains": ["B.Sc"],
+        "experience_years": 4,
+        "skills": ["sql", "tableau", "power bi", "excel", "python", "statistics"]
+      }
+    },
+    {
+      "id": "ie-05",
+      "text": "Jordan Blake\njordan.blake@example.com\nDevOps Engineer with 6 years of experience.\nSkills: Kubernetes, Docker, AWS, Terraform, Jenkins, Linux, Git, CI/CD, Python, Bash.",
+      "expected": {
+        "name_contains": "Jordan Blake",
+        "emails": ["jordan.blake@example.com"],
+        "experience_years": 6,
+        "skills": ["kubernetes", "docker", "aws", "terraform", "jenkins", "linux", "git", "ci/cd", "python", "bash"]
+      }
+    },
+    {
+      "id": "ie-06",
+      "text": "Meera Iyer\nmeera.iyer@example.com\nNLP Engineer with 4 years of experience.\nSkills: spaCy, NLTK, transformers, BERT, PyTorch, Python, sentiment analysis, topic modeling, named entity recognition.\nEducation: M.Tech in Artificial Intelligence, IIT Madras.",
+      "expected": {
+        "name_contains": "Meera Iyer",
+        "emails": ["meera.iyer@example.com"],
+        "education_contains": ["M.Tech"],
+        "experience_years": 4,
+        "skills": ["natural language processing", "spacy", "nltk", "transformers", "bert", "pytorch", "python", "sentiment analysis", "topic modeling", "named entity recognition"]
+      }
+    },
+    {
+      "id": "ie-07",
+      "text": "Sneha Kapoor\nsneha.kapoor@example.com\nFull-Stack Developer with 2 years of experience.\nSkills: HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Node.js, Express, GraphQL, MongoDB, Git, Docker, JWT.\nEducation: B.Tech in Information Technology, VIT Vellore.",
+      "expected": {
+        "name_contains": "Sneha Kapoor",
+        "emails": ["sneha.kapoor@example.com"],
+        "education_contains": ["B.Tech"],
+        "experience_years": 2,
+        "skills": ["html", "css", "javascript", "react", "next.js", "tailwind css", "node.js", "express", "graphql", "mongodb", "git", "docker", "jwt"]
+      }
+    },
+    {
+      "id": "ie-08",
+      "text": "Vikram Rao\nvikram.rao@example.com\nCloud Architect with 9 years of experience.\nSkills: AWS, Azure, GCP, Kubernetes, Docker, Terraform, CI/CD, Linux, Python, Bash, Nginx.\nEducation: B.E. in Computer Engineering, Mumbai University.",
+      "expected": {
+        "name_contains": "Vikram Rao",
+        "emails": ["vikram.rao@example.com"],
+        "education_contains": ["B.E"],
+        "experience_years": 9,
+        "skills": ["aws", "azure", "gcp", "kubernetes", "docker", "terraform", "ci/cd", "linux", "python", "bash", "nginx"]
+      }
+    },
+    {
+      "id": "ie-09",
+      "text": "Alex Morgan\nalex.morgan@example.com | +1 415 555 0132 | linkedin.com/in/alexmorgan\nSoftware engineer with 3 years of experience in Python and Flask.",
+      "expected": {
+        "name_contains": "Alex Morgan",
+        "emails": ["alex.morgan@example.com"],
+        "phones_contain": ["4155550132"],
+        "links_contain": ["linkedin.com/in/alexmorgan"],
+        "experience_years": 3,
+        "skills": ["python", "flask"]
+      }
+    },
+    {
+      "id": "ie-10",
+      "text": "Meeting notes\nWe go to the rest of the meeting. Our CV is attached. Spring is nice. The team will meet again tomorrow.",
+      "expected": {
+        "emails": [],
+        "skills": []
+      }
+    }
+  ]
+}
